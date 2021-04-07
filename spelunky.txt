@@ -1,4 +1,11 @@
 # Scan codes
-enter = 28
-down = 208
-up = 200
+enter   = 28
+up      = 200
+left    = 203
+right   = 205
+down    = 208
+#z       = # Jump
+#x       = # Attack
+#c       = # Bomb
+#d       = # Rope
+#a       = # Door/buy
