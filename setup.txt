@@ -34,10 +34,10 @@ sleep 1000
 print "Start!"
 
 # Main menu
-scKeyPress enter # Play
+scKeyPress enter    # Play
 sleep 1000
-scKeyPress down
-scKeyPress enter # Seeded Run
+scKeyPressMenu down
+scKeyPress enter    # Seeded Run
 sleep 1500
 
 # Enter seed (8 characters)
