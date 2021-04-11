@@ -17,11 +17,55 @@ scKeyPress = (code) {
     scKeyUp code
 }
 
-# Press and sleep for a bit.
-# This makes entering the seed work more consistently.
-scKeyPressMenu = (code) {
-    scKeyPress code
-    sleep 50
+navigateMenus = () {
+    # Press and sleep for a bit.
+    # This makes entering the seed work more consistently.
+    scKeyPressMenu = (code) {
+        scKeyPress code
+        sleep 50
+    }
+
+    # Main menu
+    scKeyPress enter    # Play
+    sleep 1000
+    scKeyPressMenu down
+    scKeyPress enter    # Seeded Run
+    sleep 1500
+
+    # Enter seed (8 characters)
+    # 0 1 2 3 4 A B C
+    # 5 6 7 8 9 D E F
+    print "Enter seed"
+    scKeyPressMenu enter # 0
+    scKeyPressMenu right
+    scKeyPressMenu enter # 1
+    scKeyPressMenu right
+    scKeyPressMenu enter # 2
+    scKeyPressMenu right
+    scKeyPressMenu enter # 3
+    scKeyPressMenu right
+    scKeyPressMenu enter # 4
+    scKeyPressMenu down
+    scKeyPressMenu left
+    scKeyPressMenu left
+    scKeyPressMenu left
+    scKeyPressMenu left
+    scKeyPressMenu enter # 5
+    scKeyPressMenu right
+    scKeyPressMenu enter # 6
+    scKeyPressMenu right
+    scKeyPressMenu enter # 7
+    scKeyPress enter     # Start
+    sleep 2000
+
+    # Choose adventurer
+    print "Choose adventurer"
+    scKeyPress jump  # Join
+    sleep 1000
+    scKeyPress jump  # Select
+    sleep 1000
+    scKeyPress enter # Start
+    sleep 6000
 }
 
 # Wait for 3 seconds to switch back to the game.
@@ -33,47 +77,7 @@ print "1..."
 sleep 1000
 print "Start!"
 
-# Main menu
-scKeyPress enter    # Play
-sleep 1000
-scKeyPressMenu down
-scKeyPress enter    # Seeded Run
-sleep 1500
-
-# Enter seed (8 characters)
-# 0 1 2 3 4 A B C
-# 5 6 7 8 9 D E F
-print "Enter seed"
-scKeyPressMenu enter # 0
-scKeyPressMenu right
-scKeyPressMenu enter # 1
-scKeyPressMenu right
-scKeyPressMenu enter # 2
-scKeyPressMenu right
-scKeyPressMenu enter # 3
-scKeyPressMenu right
-scKeyPressMenu enter # 4
-scKeyPressMenu down
-scKeyPressMenu left
-scKeyPressMenu left
-scKeyPressMenu left
-scKeyPressMenu left
-scKeyPressMenu enter # 5
-scKeyPressMenu right
-scKeyPressMenu enter # 6
-scKeyPressMenu right
-scKeyPressMenu enter # 7
-scKeyPress enter     # Start
-sleep 2000
-
-# Choose adventurer
-print "Choose adventurer"
-scKeyPress jump  # Join
-sleep 1000
-scKeyPress jump  # Select
-sleep 1000
-scKeyPress enter # Start
-sleep 6000
+navigateMenus
 
 # 1-1
 print "1-1"
