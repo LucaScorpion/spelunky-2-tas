@@ -1,0 +1,152 @@
+# Scan codes
+enter  = 28
+up     = 200
+left   = 203
+right  = 205
+down   = 208
+use    = 30  # a (door/buy)
+rope   = 32  # d
+jump   = 44  # z
+attack = 45  # x
+bomb   = 46  # c
+
+# Down, hold for 20ms, up.
+scKeyPress = (code) {
+    scKeyDown code
+    sleep 20
+    scKeyUp code
+}
+
+navigateMenus = () {
+    # Press and sleep for a bit.
+    # This makes entering the seed work more consistently.
+    scKeyPressMenu = (code) {
+        scKeyPress code
+        sleep 50
+    }
+
+    # Main menu
+    scKeyPress enter    # Play
+    sleep 1000
+    scKeyPressMenu down
+    scKeyPress enter    # Seeded Run
+    sleep 1500
+
+    # Enter seed (8 characters)
+    # 0 1 2 3 4 A B C
+    # 5 6 7 8 9 D E F
+    print "Enter seed"
+    scKeyPressMenu down
+    scKeyPressMenu enter # 5
+    scKeyPressMenu up
+    scKeyPressMenu enter # 0
+    scKeyPressMenu right
+    scKeyPressMenu right
+    scKeyPressMenu enter # 2
+    scKeyPressMenu enter # 2
+    scKeyPressMenu right
+    scKeyPressMenu right
+    scKeyPressMenu right
+    scKeyPressMenu enter # A
+    scKeyPressMenu right
+    scKeyPressMenu enter # B
+    scKeyPressMenu down
+    scKeyPressMenu enter # E
+    scKeyPressMenu left
+    scKeyPressMenu left
+    scKeyPressMenu enter # 9
+    scKeyPress enter     # Start
+    sleep 2000
+
+    # Choose adventurer
+    print "Choose adventurer"
+    scKeyPress jump  # Join
+    sleep 1000
+    scKeyPress jump  # Select
+    sleep 1000
+    scKeyPress enter # Start
+    sleep 6000
+}
+
+# Wait for 3 seconds to switch back to the game.
+print "Run starting in\n3..."
+sleep 1000
+print "2..."
+sleep 1000
+print "1..."
+sleep 1000
+print "Start!"
+
+navigateMenus
+
+# 1-1
+print "1-1"
+
+scKeyDown right
+sleep 400
+scKeyDown down
+sleep 16
+scKeyUp right
+sleep 93
+scKeyDown jump
+sleep 124
+scKeyUp jump
+sleep 232
+scKeyDown left
+sleep 109
+scKeyUp down
+sleep 217
+scKeyUp left
+sleep 294
+scKeyDown left
+sleep 542
+scKeyDown jump
+sleep 155
+scKeyUp jump
+sleep 357
+scKeyDown jump
+sleep 217
+scKeyUp jump
+sleep 62
+scKeyDown attack
+sleep 139
+scKeyUp attack
+sleep 403
+scKeyDown attack
+sleep 109
+scKeyUp attack
+sleep 961
+scKeyUp left
+sleep 263
+scKeyDown right
+sleep 636
+scKeyDown bomb
+sleep 77
+scKeyUp bomb
+sleep 93
+scKeyDown attack
+sleep 93
+scKeyUp attack
+sleep 1024
+scKeyUp right
+sleep 1550
+scKeyDown left
+sleep 449
+scKeyUp left
+sleep 233
+scKeyDown right
+sleep 232
+scKeyUp right
+sleep 201
+scKeyDown left
+sleep 264
+scKeyUp left
+sleep 154
+scKeyDown use
+sleep 124
+scKeyUp use
+
+# 1-2
+print "1-2"
+
+print "Done!"
