@@ -68,6 +68,12 @@ navigateMenus = () {
     sleep 4500
 }
 
+levelTransition = () {
+    sleep 3000
+    scKeyPress jump
+    sleep 1300
+}
+
 # Wait for 3 seconds to switch back to the game.
 timestamps {
     0       print "Run starting in\n3..."
@@ -108,7 +114,50 @@ timestamps {
     9670    scKeyPress  use
 }
 
+levelTransition
+
 # 1-2
 print "1-2"
+timestamps {
+	0       scKeyDown   right
+	3000    scKeyDown   jump
+	3200    scKeyUp     jump
+	3729    scKeyUp     right
+	3800    scKeyDown   left
+	4053    scKeyUp     left
+	4208    scKeyDown   left
+	4456    scKeyDown   jump
+	4672    scKeyUp     jump
+	5522    scKeyUp     left
+	5925    scKeyDown   down
+	6049    scKeyDown   jump
+	6158    scKeyUp     jump
+	6158    scKeyDown   right
+	6204    scKeyUp     down
+	6654    scKeyDown   jump
+	6764    scKeyUp     jump
+	7306    scKeyUp     right
+	7569    scKeyDown   left
+	7847    scKeyDown   jump
+	7939    scKeyUp     jump
+	8713    scKeyDown   jump
+	8945    scKeyUp     jump
+	9378    scKeyDown   jump
+	9656    scKeyUp     jump
+	10863   scKeyUp     left
+	10894   scKeyDown   down
+	10987   scKeyPress  attack
+	11142   scKeyUp     down
+	11358   scKeyDown   right
+	11389   scKeyUp     right
+	11498   scKeyDown   jump
+	11683   scKeyUp     jump
+	11683   scKeyDown   right
+    11683   scKeyPress  attack
+    11900   scKeyDown   jump
+    12100   scKeyUp     jump
+    12200   scKeyUp     right
+    12200   scKeyPress  use
+}
 
 print "Done!"
