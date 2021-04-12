@@ -65,55 +65,47 @@ navigateMenus = () {
     scKeyPress jump  # Select
     sleep 1000
     scKeyPress enter # Start
-    sleep 6000
+    sleep 4500
 }
 
 # Wait for 3 seconds to switch back to the game.
-print "Run starting in\n3..."
-sleep 1000
-print "2..."
-sleep 1000
-print "1..."
-sleep 1000
-print "Start!"
+timestamps {
+    0       print "Run starting in\n3..."
+    1000    print "2..."
+    2000    print "1..."
+    3000    print "Start!"
+}
 
 navigateMenus
 
 # 1-1
 print "1-1"
 timestamps {
-    0 scKeyDown right
-    400 scKeyDown down
-    416 scKeyUp right
-    509 scKeyDown jump
-    633 scKeyUp jump
-    865 scKeyDown left
-    974 scKeyUp down
-    1191 scKeyUp left
-    1485 scKeyDown left
-    2027 scKeyDown jump
-    2182 scKeyUp jump
-    2539 scKeyDown jump
-    2756 scKeyUp jump
-    2818 scKeyDown attack
-    2957 scKeyUp attack
-    3360 scKeyDown attack
-    3469 scKeyUp attack
-    4430 scKeyUp left
-    4693 scKeyDown right
-    5329 scKeyDown bomb
-    5406 scKeyUp bomb
-    5499 scKeyDown attack
-    5592 scKeyUp attack
-    6616 scKeyUp right
-    8166 scKeyDown left
-    8615 scKeyUp left
-    8848 scKeyDown right
-    9080 scKeyUp right
-    9281 scKeyDown left
-    9545 scKeyUp left
-    9699 scKeyDown use
-    9823 scKeyUp use
+    0       scKeyDown   right
+    416     scKeyUp     right
+    416     scKeyDown   down
+    416     scKeyDown   jump
+    500     scKeyUp     jump
+    500     scKeyUp     down
+    865     scKeyDown   left
+    1191    scKeyUp     left
+    1485    scKeyDown   left
+    2027    scKeyDown   jump
+    2182    scKeyUp     jump
+    2539    scKeyDown   jump
+    2756    scKeyUp     jump
+    2818    scKeyPress  attack
+    4430    scKeyUp     left
+    4693    scKeyDown   right
+    5300    scKeyPress  bomb
+    6616    scKeyUp     right
+    8166    scKeyDown   left
+    8615    scKeyUp     left
+    8848    scKeyDown   right
+    9080    scKeyUp     right
+    9281    scKeyDown   left
+    9500    scKeyUp     left
+    9670    scKeyPress  use
 }
 
 # 1-2
